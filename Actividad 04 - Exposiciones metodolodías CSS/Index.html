@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodología BEM y OOCSS</title>
+    <link rel="stylesheet" href="Assets/Css/Style.Css">
+</head>
+<body>
+    <!-- Encabezado de la página explicativa -->
+    <!-- Este es un bloque autónomo llamado 'header', que podría tener un título o logo -->
+    <header class="header">
+        <!-- agregar un título o logo -->
+    </header>
+
+    <!-- Sección de contenido que explica BEM y OOCSS -->
+    <!-- El bloque 'content' encapsula toda la sección de contenido de la página -->
+    <section class="content">
+        <!-- Título principal explicando la metodología BEM -->
+        <h1>¿Qué es BEM (Block, Element, Modifier)?</h1>
+        <p>La metodología BEM, que significa Block, Element, Modifier (Bloque, Elemento,
+            Modificador), fue desarrollada por Yandex como una forma de mejorar la
+            mantenibilidad y escalabilidad del código CSS. BEM se enfoca en estructurar y
+            nombrar clases CSS de manera que el código sea más modular y fácil de
+            entender.</p>
+
+        <!-- Lista que explica cada concepto de BEM: Block, Element, Modifier -->
+        <ul>
+            <!-- Block: Un componente independiente -->
+            <li><strong>Bloques (Block):</strong> Un componente independiente que tiene un significado
+                completo por sí mismo. Puede ser cualquier parte de la interfaz de usuario,
+                como un botón, un menú, o un formulario. El bloque es autónomo y no debe
+                depender de otros componentes.</li> 
+                <!-- Ejemplos de bloques: 'menu', 'boton', 'caja-de-busqueda' -->
+                <code>.menu, .boton, .caja-de-busqueda</code>
+            
+            <!-- Element: Parte de un bloque que tiene una función específica -->
+            <li><strong>Elementos (Element):</strong> Parte de un bloque que cumple una función
+                específica dentro de ese bloque. Los elementos no existen fuera del bloque
+                y están relacionados únicamente con él.</li> 
+                <!-- Ejemplos de elementos: 'menu__item', 'boton__icono', 'caja-de-busqueda__input' -->
+                <code>.menu__item, .boton__icono, .caja-de-busqueda__input</code>
+
+            <!-- Modifier: Cambia el estado o apariencia de un bloque o elemento -->
+            <li><strong>Modificadores (Modifier):</strong> Variaciones o estados de un bloque o un elemento
+                que cambian su apariencia o comportamiento sin alterar su estructura
+                básica.</li>
+                <!-- Ejemplos de modificadores: 'menu--horizontal', 'boton--grande', 'boton--activo' -->
+                <code>.menu--horizontal, .boton--grande, .boton--activo</code>
+        </ul>
+
+        <!-- Implementación del bloque 'menu' con el modificador 'menu--horizontal' -->
+        <div class="menu menu--horizontal">
+            <!-- El bloque 'menu' contiene un elemento 'menu__lista' -->
+            <ul class="menu__lista">
+                <!-- Cada 'menu__item' es un elemento dentro del bloque 'menu' -->
+                <li class="menu__item">Inicio</li>
+                <li class="menu__item">Servicios</li>
+                <li class="menu__item">Contacto</li>
+            </ul>
+        </div>
+
+        <h2>¿Qué es OOCSS (Object-Oriented CSS)?</h2>
+        <p>La metodología OOCSS (CSS Orientado a Objetos) fue introducida por Nicole
+            Sullivan. Está basada en los principios de la programación orientada a objetos,
+            donde se busca separar la estructura visual (estilos de contenedores) de la
+            estructura del contenido (estilos de objetos). El objetivo de OOCSS es crear CSS
+            reutilizable y mantenible.</p>
+
+        <!-- Explicación de los principios de OOCSS -->
+        <ul>
+            <!-- Separación de estructura y estilo, para mayor flexibilidad -->
+            <li><strong>Separar estructura y estilo:</strong> OOCSS promueve la creación de clases que manejen el aspecto
+                visual de un elemento (como el tamaño o el color) de forma
+                independiente de su estructura HTML. Por ejemplo, en lugar de aplicar el color y la disposición directamente a
+                los elementos, creamos clases separadas para cada uno.</li>
+            <!-- Creación de objetos reutilizables para evitar duplicar código -->
+            <li><strong>Crear objetos reutilizables:</strong> Separa los estilos de los contenedores (envoltorios o "wrappers") y
+                los estilos del contenido, para que un mismo objeto pueda ser
+                reutilizado en diferentes contextos sin duplicar código.</li>
+        </ul>
+
+        <p><strong>Ejemplo en código:</strong></p>
+
+        <!-- Ejemplo de un bloque contenedor y su contenido -->
+        <p>Estructura de contenedor:</p>
+        <!-- 'caja-layout' es un bloque que contiene otro bloque llamado 'contenido' -->
+        <div class="caja-layout">
+            <div class="contenido">
+                <p>Texto dentro de la caja</p>
+            </div>
+        </div>
+
+        <h3>Ejemplo de implementación:</h3>
+
+        <!-- Ejemplo de Bloque: 'boton' con modificadores 'boton--grande' y 'boton--activo' -->
+        <div class="boton boton--grande boton--activo">Enviar</div>
+        <!-- Bloque 'boton' tiene dos modificadores que alteran su apariencia sin cambiar su estructura -->
+
+        <p>En este ejemplo, el bloque <code>.boton</code> representa un botón genérico. Los modificadores <code>.boton--grande</code> y <code>.boton--activo</code> cambian su tamaño y color. Esto sigue el principio de BEM, donde los modificadores alteran el estilo de los bloques sin afectar su estructura base.</p>
+
+        <!-- Ejemplo de Bloque: 'caja-de-busqueda' -->
+        <div class="caja-de-busqueda">
+            <!-- El bloque 'caja-de-busqueda' contiene un elemento 'caja-de-busqueda__input' -->
+            <input class="caja-de-busqueda__input" type="text" placeholder="Buscar...">
+        </div>
+
+        <p>Aquí, <code>.caja-de-busqueda</code> es el bloque, y <code>.caja-de-busqueda__input</code> es un elemento que forma parte del bloque. El elemento <code>input</code> está estilizado según las reglas de CSS orientadas a objetos, asegurando que sea reutilizable en otras partes del sitio.</p>
+    </section>
+</body>
+<footer class="footer">
+    <!-- Elemento 'footer__text' para el contenido textual del footer -->
+    <p class="footer__text">
+        &copy; 2024. Todos los derechos reservados a Daniela Navarro Arroyave y Sergio Andrés Acevedo Mendivelso.
+    </p>
+</footer>
+</html>

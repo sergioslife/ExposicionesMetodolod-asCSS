@@ -1,0 +1,111 @@
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif; /* Definición de la fuente por defecto para la página */
+    margin: 0; /* Eliminamos márgenes globales */
+    padding: 0; /* Eliminamos padding global */
+}
+
+/* ------------------ Implementación de BEM ------------------ */
+
+/* Bloque: "menu" */
+.menu {
+    background-color: #333; /* Color de fondo oscuro para el menú */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Modificador: "menu--horizontal" */
+.menu--horizontal {
+    display: flex; /* Alineación en fila con flexbox */
+    justify-content: space-around; /* Espaciado uniforme entre los ítems del menú */
+}
+
+/* Elementos: "menu__lista" y "menu__item" */
+.menu__lista {
+    list-style: none; /* Eliminamos viñetas de la lista */
+    margin: 0; /* Eliminamos márgenes */
+    padding: 0; /* Eliminamos padding */
+    display: flex; /* Alineación de los ítems en fila */
+}
+
+.menu__item {
+    color: white; /* Color blanco para los textos */
+    padding: 10px; /* Espaciado interno para aumentar el área clicable */
+    cursor: pointer; /* Cambiamos el cursor a "pointer" para mejorar la experiencia de usuario */
+}
+
+.menu__item:hover {
+    background-color: #555; /* Cambio de color de fondo en hover */
+}
+
+/* ------------------ Otro ejemplo de BEM ------------------ */
+
+.boton {
+    background-color: #69C0AF; /* Color de fondo del botón */
+    color: white; /* Color de texto blanco */
+    padding: 10px 20px; /* Espaciado interno (padding) del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centrado del texto dentro del botón */
+    cursor: pointer; /* Cursor estilo "pointer" para hacer saber al usuario que es clicable */
+    margin: 20px; /* Separación del botón respecto a otros elementos */
+}
+
+.boton--grande {
+    font-size: 18px; /* Aumenta el tamaño del texto dentro del botón */
+}
+
+.boton--activo {
+    background-color: #FDC415; /* Color amarillo cuando el botón está activo */
+}
+
+/* ------------------ Implementación de OOCSS ------------------ */
+
+.caja-de-busqueda {
+    margin: 20px; /* Espaciado alrededor del bloque */
+}
+
+.caja-de-busqueda__input {
+    padding: 10px; /* Espaciado interno para mayor comodidad de usuario */
+    border: 1px solid #ccc; /* Borde del campo de texto */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 100%; /* Toma el 100% del ancho disponible */
+    max-width: 300px; /* Máximo ancho de 300px para evitar que sea demasiado grande */
+}
+
+.caja-layout {
+    padding: 20px; /* Espaciado interno del contenedor */
+    border: 1px solid #ccc; /* Borde de la caja */
+    margin: 20px; /* Espaciado externo alrededor de la caja */
+}
+
+.contenido {
+    font-size: 14px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+}
+
+/* ------------------ Estilos para el footer ------------------ */
+.footer {
+    background-color: #333; /* Color de fondo oscuro */
+    color: white; /* Texto en color blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 30px; /* Separación con el contenido anterior */
+}
+
+.footer__text {
+    font-size: 14px; /* Tamaño de fuente */
+    margin: 0; /* Eliminar márgenes adicionales */
+}
+
+/* ------------------ Responsividad ------------------ */
+@media (max-width: 768px) {
+    .menu--horizontal {
+        flex-direction: column; /* Cambiamos la dirección a columna */
+        align-items: center; /* Centramos los ítems */
+    }
+
+    .boton {
+        width: 100%; /* El botón ocupa el 100% del ancho disponible */
+        text-align: center; /* Centrado del texto */
+        margin: 10px 0; /* Márgenes más pequeños */
+    }
+}
